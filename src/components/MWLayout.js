@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-
-
-
 import { TabBar } from 'antd-mobile';
 
 class MWLayout extends Component {
@@ -43,7 +40,7 @@ class MWLayout extends Component {
               this.props.history.push('/')
             }}
           >
-            {this.props.children}
+            { this.props.match.url === '/' && this.props.children }
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -68,7 +65,7 @@ class MWLayout extends Component {
               this.props.history.push('/Cart')
             }}
           >
-            {this.props.children}
+            { this.props.match.url === '/Cart' && this.props.children }
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -92,7 +89,7 @@ class MWLayout extends Component {
               this.props.history.push('/Mine')
             }}
           >
-            {this.props.children}
+            { this.props.match.url === '/Mine' && this.props.children }
           </TabBar.Item>
         </TabBar>
       </div>
